@@ -22,9 +22,14 @@ Nav * {
 
 .Nav__link {
   text-decoration: none;
+  color: #717173;
 }
 
 .Nav__avatar {
   height: 3rem;
   width: 3rem;
+}
+
+.Nav__hamburger {
+  display: none;
 }

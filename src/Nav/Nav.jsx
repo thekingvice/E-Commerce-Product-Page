@@ -5,7 +5,8 @@ function Nav() {
   return (
     <nav className="Nav">
       <div className="Nav__left">
-        <img src="public/logo.svg" alt="logo" />
+        <img className="Nav__hamburger" src="/icon-menu.svg" alt="hamburger" />
+        <img className="Nav__logo" src="public/logo.svg" alt="logo" />
         <a className="Nav__link" href="">
           Collections
         </a>
