@@ -1,0 +1,30 @@
+Nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+Nav * {
+  cursor: pointer;
+}
+
+.Nav__left {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.Nav__right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.Nav__link {
+  text-decoration: none;
+}
+
+.Nav__avatar {
+  height: 3rem;
+  width: 3rem;
+}
