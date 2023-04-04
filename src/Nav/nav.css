@@ -2,10 +2,7 @@ Nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-Nav * {
-  cursor: pointer;
+  padding: 0 1rem;
 }
 
 .Nav__left {
@@ -23,11 +20,29 @@ Nav * {
 .Nav__link {
   text-decoration: none;
   color: #717173;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Nav__link:hover {
+  border-bottom: 3px solid #ff7d1b;
+}
+
+.Nav__cart {
+  cursor: pointer;
 }
 
 .Nav__avatar {
   height: 3rem;
   width: 3rem;
+  cursor: pointer;
+}
+
+.Nav__avatar:hover {
+  border: 2px solid #ff7d1b;
+  border-radius: 3rem;
 }
 
 .Nav__hamburger {

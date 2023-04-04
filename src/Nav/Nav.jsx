@@ -24,7 +24,7 @@ function Nav() {
         </a>
       </div>
       <div className="Nav__right">
-        <img src="public/icon-cart.svg" alt="" />
+        <img className="Nav__cart" src="public/icon-cart.svg" alt="" />
         <img className="Nav__avatar" src="public/image-avatar.png" alt="" />
       </div>
     </nav>

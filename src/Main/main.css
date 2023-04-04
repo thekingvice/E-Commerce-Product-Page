@@ -1,6 +1,7 @@
 Main {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  padding: 5rem 1rem;
 }
 
 .Main__product-images {
@@ -8,6 +9,7 @@ Main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 }
 
 .Main__product-preview {
@@ -26,12 +28,116 @@ Main {
   border-radius: 0.5rem;
 }
 
+.Main__product-thumbnail:hover {
+  border: 2px solid #ff7d1b;
+  opacity: 50%;
+  cursor: pointer;
+}
+
 .Main__product-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 1rem;
 }
 
 .Main__brand {
-  color: #e08848;
+  color: #ff7d1b;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.Main__product-name {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.Main__product-description {
+  color: #717173;
+  max-width: 40ch;
+}
+
+.Main__price-w-discount {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.Main__price {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.Main__discount {
+  font-weight: 700;
+  background: #fff0e3;
+  color: #ff7d1b;
+  padding: 0.25rem;
+  border-radius: 0.2rem;
+}
+
+.Main__original-price {
+  font-weight: 700;
+  color: #717173;
+  text-decoration: line-through;
+}
+
+.Main__counter-w-add-to-cart {
+  display: flex;
+  gap: 1rem;
+}
+
+.Main__counter {
+  display: flex;
+  align-items: center;
+}
+
+.Main__counter-button {
+  height: 2.5rem;
+  width: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background: #f7f8fd;
+  cursor: pointer;
+}
+
+.Main__counter-button:hover {
+  opacity: 50%;
+}
+
+.--Main__counter-button-minus {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.--Main__counter-button-plus {
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.Main__counter-indicator {
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f7f8fd;
+  font-weight: 700;
+}
+
+.Main__add-to-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  font-weight: 700;
+  background: #ff7d1b;
+  width: 15rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  box-shadow: 0 1rem 5rem #ffb97b;
+}
+
+.Main__add-to-cart:hover {
+  opacity: 50%;
 }
