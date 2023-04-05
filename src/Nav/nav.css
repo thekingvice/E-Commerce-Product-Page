@@ -2,7 +2,6 @@ Nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
 }
 
 .Nav__left {
@@ -20,10 +19,11 @@ Nav {
 .Nav__link {
   text-decoration: none;
   color: #717173;
-  height: 5rem;
+  padding: 2rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: 3px solid transparent;
 }
 
 .Nav__link:hover {

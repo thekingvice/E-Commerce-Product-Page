@@ -1,7 +1,7 @@
 Main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 5rem 1rem;
+  padding: 5rem 0;
 }
 
 .Main__product-images {
@@ -16,6 +16,7 @@ Main {
   max-width: 23rem;
   width: 100%;
   border-radius: 1rem;
+  cursor: pointer;
 }
 
 .Main__product-thumbnail-wrapper {
