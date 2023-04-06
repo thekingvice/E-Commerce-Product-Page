@@ -12,6 +12,41 @@ Main {
   gap: 1rem;
 }
 
+/* remove margin */
+
+.Main__carousel {
+  display: flex;
+  margin: 1rem;
+  align-items: center;
+}
+
+.Main__close {
+  cursor: pointer;
+  position: relative;
+  bottom: 17rem;
+  left: 30rem;
+}
+
+.Main__carousel-btn {
+  position: relative;
+  min-height: 2rem;
+  min-width: 2rem;
+  border-radius: 2rem;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  cursor: pointer;
+  display: none;
+}
+
+.--Main__carousel-btn-back {
+  left: 1rem;
+}
+
+.--Main__carousel-btn-back-forward {
+  right: 1rem;
+}
+
 .Main__product-preview {
   max-width: 23rem;
   width: 100%;
@@ -141,4 +176,23 @@ Main {
 
 .Main__add-to-cart:hover {
   opacity: 50%;
+}
+
+.--Main__product-images-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000000b5;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.--Main__product-preview-overlay {
+  max-width: 30rem;
+}
+
+.--Main__carousel-btn-overlay {
+  display: flex;
 }
