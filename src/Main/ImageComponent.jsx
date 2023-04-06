@@ -34,7 +34,7 @@ export default function ImagesComponent() {
   };
 
   return (
-    <>
+    <section className="Main__images-component">
       <section className="Main__product-images">
         <span className="Main__carousel">
           <button
@@ -139,6 +139,6 @@ export default function ImagesComponent() {
           />
         </span>
       </section>
-    </>
+    </section>
   );
 }

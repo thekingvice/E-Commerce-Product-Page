@@ -1,4 +1,4 @@
-Main {
+.Main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 5rem 0;
@@ -12,11 +12,12 @@ Main {
   gap: 1rem;
 }
 
-/* remove margin */
+.Main__images-component {
+  margin: 0 1rem;
+}
 
 .Main__carousel {
   display: flex;
-  margin: 1rem;
   align-items: center;
 }
 

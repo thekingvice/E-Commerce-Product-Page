@@ -1,7 +1,8 @@
-Nav {
+.Nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #717173;
 }
 
 .Nav__left {
