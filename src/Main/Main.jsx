@@ -1,26 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ImagesComponent from "./ImageComponent";
 import "./main.css";
 
 function Main(props) {
-  const { qty, setQty, productInfo, cartItems, setCartItems } = props;
-  // Quantity Counter
-  // const [counter, setCounter] = useState(0);
+  const { handleAddItem, setQty, productInfo } = props;
+
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    setQty(counter);
+  }, [counter]);
 
   const handleIncrementPlus = () => {
-    setQty(qty + 1);
+    setCounter(counter + 1);
   };
-  //dont forget about this
-  // function test() {
-  //   productInfo.qty = counter;
-  //   if (productInfo.qty > 0) {
-  //     console.log(productInfo);
-  //   }
-  // }
 
   const handleIncrementMinus = () => {
-    if (qty > 0) {
-      setQty(qty - 1);
+    if (counter > 0) {
+      setCounter(counter - 1);
     }
   };
 
@@ -50,7 +47,7 @@ function Main(props) {
             >
               <img src="/icon-minus.svg" alt="minus" />
             </button>
-            <div className="Main__counter-indicator">{qty}</div>
+            <div className="Main__counter-indicator">{counter}</div>
             <button
               className="Main__counter-button --Main__counter-button-plus"
               onClick={handleIncrementPlus}
@@ -58,7 +55,7 @@ function Main(props) {
               <img src="/icon-plus.svg" alt="plus" />
             </button>
           </span>
-          <button className="Main__add-to-cart">
+          <button className="Main__add-to-cart" onClick={handleAddItem}>
             <img
               className="Main__cart-icon"
               src="/icon-cart.svg"

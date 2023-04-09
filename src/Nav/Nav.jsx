@@ -1,8 +1,18 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import "./nav.css";
 
-function Nav() {
-  // const { product, cartItems, setCartItems } = props;
+function Nav(props) {
+  const { cartQty, listItems, handleDeleteItem } = props;
+
+  const [display, setDisplay] = useState("none");
+
+  const handleClick = () => {
+    if (display === "none") {
+      setDisplay("block");
+    } else {
+      setDisplay("none");
+    }
+  };
 
   return (
     <nav className="Nav">
@@ -26,11 +36,46 @@ function Nav() {
         </a>
       </div>
       <div className="Nav__right">
-        <img className="Nav__cart-icon" src="/icon-cart.svg" alt="" />
-        <div>0</div>
-        <aside className="Nav__cart">
-          <h1>Cart</h1>
-          <div>Your cart is empty.</div>
+        <img
+          className="Nav__cart-icon"
+          onClick={handleClick}
+          src="/icon-cart.svg"
+          alt=""
+        />
+        <aside
+          className="Nav__cart-qty"
+          style={{ display: cartQty > 0 ? "block" : "none" }}
+        >
+          {cartQty}
+        </aside>
+        <aside className="Nav__cart" style={{ display: display }}>
+          <h1 className="Nav__cart-heading">Cart</h1>
+          <ul className="Nav__cart-list">
+            {listItems.map((item, index) => (
+              <li key={index}>
+                {item}
+                <button
+                  className="Nav__delete"
+                  onClick={() => handleDeleteItem(item)}
+                >
+                  {" "}
+                  <img src="/icon-delete.svg" alt="delete" />{" "}
+                </button>
+              </li>
+            ))}
+          </ul>
+          <button
+            className="Nav__checkout"
+            style={{ display: cartQty > 0 ? "block" : "none" }}
+          >
+            Checkout
+          </button>
+          <div
+            className="Nav__empty"
+            style={{ display: cartQty > 0 ? "none" : "block" }}
+          >
+            Your cart is empty.
+          </div>
         </aside>
         <img className="Nav__avatar" src="/image-avatar.png" alt="" />
       </div>

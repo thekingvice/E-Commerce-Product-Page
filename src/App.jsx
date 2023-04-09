@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./App.css";
 import Nav from "./Nav/Nav";
 import Main from "./Main/Main";
-import Product from "./Product";
 
 function App() {
   const productInfo = {
@@ -14,44 +13,52 @@ function App() {
 
   const [qty, setQty] = useState(0);
 
-  // const [productInfo, setProductInfo] = useState({
-  //   name: "Fall Limited Edition Sneakers",
-  //   discount: 0.5,
-  //   originalPrice: 250,
-  //   price: 250 * 0.5,
-  //   qty: 0,
-  // });
+  const [cartQty, setCartQty] = useState(0);
 
-  //Test
+  const [listItems, setListItems] = useState([]);
 
-  const [cartItems, setCartItems] = useState([]);
+  const [status, setStatus] = useState(true);
 
-  function addToCart(item) {
-    setCartItems([...cartItems, item]);
-  }
+  const handleAddItem = () => {
+    const newItem = (
+      <div className="Nav__cart-item">
+        <img
+          className="Nav__thumbnail"
+          src="/image-product-1-thumbnail.jpg"
+          alt="product-thumbnail"
+        />
+        <p>
+          {productInfo.name} <br />${productInfo.price} x {qty} $
+          {productInfo.price * qty}
+        </p>
+      </div>
+    );
+    if ((status === true) & (qty > 0)) {
+      setListItems([...listItems, newItem]);
+      setStatus(false);
+      setCartQty(qty);
+    }
+  };
 
-  function removeFromCart(item) {
-    setCartItems(cartItems.filter((cartItem) => cartItem !== item));
-  }
-
-  // quantity: counter,
-  // total: 125 * counter,
+  const handleDeleteItem = (itemToDelete) => {
+    setListItems(listItems.filter((item) => item !== itemToDelete));
+    setStatus(true);
+    setCartQty(0);
+  };
 
   return (
     <div className="App">
       <Nav
-        productInfo={productInfo}
-        cartItems={cartItems}
-        setCartItems={setCartItems}
+        listItems={listItems}
+        handleDeleteItem={handleDeleteItem}
+        cartQty={cartQty}
       ></Nav>
       <Main
         qty={qty}
         setQty={setQty}
+        handleAddItem={handleAddItem}
         productInfo={productInfo}
-        cartItems={cartItems}
-        setCartItems={setCartItems}
       ></Main>
-      <Product qty={qty} setQty={setQty} productInfo={productInfo}></Product>
     </div>
   );
 }
