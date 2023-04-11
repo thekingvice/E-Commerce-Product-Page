@@ -1,8 +1,10 @@
 export default function MobileNav(props) {
   const { sideMenu, setSideMenu } = props;
+
   const handleSideMenu = () => {
     setSideMenu("none");
   };
+
   return (
     <div className="Nav__mobile" style={{ display: sideMenu }}>
       <img

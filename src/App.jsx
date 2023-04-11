@@ -22,6 +22,12 @@ function App() {
 
   const [sideMenu, setSideMenu] = useState("none");
 
+  const handleDeleteItem = (itemToDelete) => {
+    setListItems(listItems.filter((item) => item !== itemToDelete));
+    setStatus(true);
+    setCartQty(0);
+  };
+
   const handleAddItem = () => {
     const newItem = (
       <div className="Nav__cart-item">
@@ -41,12 +47,6 @@ function App() {
       setStatus(false);
       setCartQty(qty);
     }
-  };
-
-  const handleDeleteItem = (itemToDelete) => {
-    setListItems(listItems.filter((item) => item !== itemToDelete));
-    setStatus(true);
-    setCartQty(0);
   };
 
   return (
