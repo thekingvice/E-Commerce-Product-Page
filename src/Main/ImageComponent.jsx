@@ -3,6 +3,22 @@ import { useState } from "react";
 export default function ImagesComponent() {
   const [pos, setPos] = useState(1);
 
+  const [highlight, setHighlight] = useState([
+    "Main__product-thumbnail highlighted-thumbnail",
+    "Main__product-thumbnail",
+    "Main__product-thumbnail",
+    "Main__product-thumbnail",
+  ]);
+
+  const handleHighlight = (num) => {
+    const array = [...highlight];
+    for (let i = 0; i < array.length; i++) {
+      array[i] = "Main__product-thumbnail";
+    }
+    array[num] = "Main__product-thumbnail highlighted-thumbnail";
+    setHighlight(array);
+  };
+
   const handleThumbnail = (num) => {
     setPos(num);
   };
@@ -41,7 +57,11 @@ export default function ImagesComponent() {
             className="Main__carousel-btn --Main__carousel-btn-back "
             onClick={handleBack}
           >
-            <img src="/icon-previous.svg" alt="previous" />
+            <img
+              className="Main__carousel-previous"
+              src="/icon-previous.svg"
+              alt="previous"
+            />
           </button>
           <img
             className="Main__product-preview"
@@ -53,31 +73,43 @@ export default function ImagesComponent() {
             className="Main__carousel-btn --Main__carousel-btn-back-forward"
             onClick={handleForward}
           >
-            <img src="/icon-next.svg" alt="" />
+            <img className="Main__carousel-next" src="/icon-next.svg" alt="" />
           </button>
         </span>
         <span className="Main__product-thumbnail-wrapper">
           <img
-            onClick={() => handleThumbnail(1)}
-            className="Main__product-thumbnail"
+            onClick={() => {
+              handleThumbnail(1);
+              handleHighlight(0);
+            }}
+            className={highlight[0]}
             src="/image-product-1-thumbnail.jpg"
             alt="product-image-thumbnail"
           />
           <img
-            onClick={() => handleThumbnail(2)}
-            className="Main__product-thumbnail"
+            onClick={() => {
+              handleThumbnail(2);
+              handleHighlight(1);
+            }}
+            className={highlight[1]}
             src="/image-product-2-thumbnail.jpg"
             alt="product-image-thumbnail"
           />
           <img
-            onClick={() => handleThumbnail(3)}
-            className="Main__product-thumbnail"
+            onClick={() => {
+              handleThumbnail(3);
+              handleHighlight(2);
+            }}
+            className={highlight[2]}
             src="/image-product-3-thumbnail.jpg"
             alt="product-image-thumbnail"
           />
           <img
-            onClick={() => handleThumbnail(4)}
-            className="Main__product-thumbnail"
+            onClick={() => {
+              handleThumbnail(4);
+              handleHighlight(3);
+            }}
+            className={highlight[3]}
             src="/image-product-4-thumbnail.jpg"
             alt="product-image-thumbnail"
           />
@@ -114,26 +146,38 @@ export default function ImagesComponent() {
         </span>
         <span className="Main__product-thumbnail-wrapper">
           <img
-            onClick={() => handleThumbnail(1)}
-            className="Main__product-thumbnail"
+            onClick={() => {
+              handleThumbnail(1);
+              handleHighlight(0);
+            }}
+            className={highlight[0]}
             src="/image-product-1-thumbnail.jpg"
             alt="product-image-thumbnail"
           />
           <img
-            onClick={() => handleThumbnail(2)}
-            className="Main__product-thumbnail"
+            onClick={() => {
+              handleThumbnail(2);
+              handleHighlight(1);
+            }}
+            className={highlight[1]}
             src="/image-product-2-thumbnail.jpg"
             alt="product-image-thumbnail"
           />
           <img
-            onClick={() => handleThumbnail(3)}
-            className="Main__product-thumbnail"
+            onClick={() => {
+              handleThumbnail(3);
+              handleHighlight(2);
+            }}
+            className={highlight[2]}
             src="/image-product-3-thumbnail.jpg"
             alt="product-image-thumbnail"
           />
           <img
-            onClick={() => handleThumbnail(4)}
-            className="Main__product-thumbnail"
+            onClick={() => {
+              handleThumbnail(4);
+              handleHighlight(3);
+            }}
+            className={highlight[3]}
             src="/image-product-4-thumbnail.jpg"
             alt="product-image-thumbnail"
           />

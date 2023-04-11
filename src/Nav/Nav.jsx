@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./nav.css";
 
 function Nav(props) {
-  const { cartQty, listItems, handleDeleteItem } = props;
+  const { setSideMenu, cartQty, listItems, handleDeleteItem } = props;
 
   const [display, setDisplay] = useState("none");
 
@@ -14,10 +14,19 @@ function Nav(props) {
     }
   };
 
+  const handleSideMenu = () => {
+    setSideMenu("flex");
+  };
+
   return (
     <nav className="Nav">
       <div className="Nav__left">
-        <img className="Nav__hamburger" src="/icon-menu.svg" alt="hamburger" />
+        <img
+          className="Nav__hamburger"
+          src="/icon-menu.svg"
+          alt="hamburger"
+          onClick={handleSideMenu}
+        />
         <img className="Nav__logo" src="/logo.svg" alt="logo" />
         <a className="Nav__link" href="">
           Collections

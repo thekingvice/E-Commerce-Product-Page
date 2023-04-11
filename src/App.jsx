@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Nav from "./Nav/Nav";
 import Main from "./Main/Main";
+import MobileNav from "./Nav/MobileNav";
 
 function App() {
   const productInfo = {
@@ -18,6 +19,8 @@ function App() {
   const [listItems, setListItems] = useState([]);
 
   const [status, setStatus] = useState(true);
+
+  const [sideMenu, setSideMenu] = useState("none");
 
   const handleAddItem = () => {
     const newItem = (
@@ -48,7 +51,9 @@ function App() {
 
   return (
     <div className="App">
+      <MobileNav sideMenu={sideMenu} setSideMenu={setSideMenu}></MobileNav>
       <Nav
+        setSideMenu={setSideMenu}
         listItems={listItems}
         handleDeleteItem={handleDeleteItem}
         cartQty={cartQty}

@@ -35,10 +35,11 @@ function Main(props) {
         <span className="Main__price-w-discount">
           <h1 className="Main__price"> ${productInfo.price}.00</h1>{" "}
           <h1 className="Main__discount">{productInfo.discount * 100}%</h1>
+          <h1 className="Main__original-price">
+            ${productInfo.originalPrice}.00
+          </h1>
         </span>
-        <h1 className="Main__original-price">
-          ${productInfo.originalPrice}.00
-        </h1>
+
         <span className="Main__counter-w-add-to-cart">
           <span className="Main__counter">
             <button
